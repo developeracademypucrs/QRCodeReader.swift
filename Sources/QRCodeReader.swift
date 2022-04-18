@@ -360,8 +360,7 @@ public final class QRCodeReader: NSObject, AVCaptureMetadataOutputObjectsDelegat
     
     // MARK: - AVCaptureMetadataOutputObjects Delegate Methods
     
-    
-    public func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
+    public func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         for current in metadataObjects {
             if let _readableCodeObject = current as? AVMetadataMachineReadableCodeObject {
                 if metadataObjectTypes.contains(_readableCodeObject.type) {
@@ -378,4 +377,5 @@ public final class QRCodeReader: NSObject, AVCaptureMetadataOutputObjectsDelegat
             }
         }
     }
+    
 }
