@@ -82,7 +82,7 @@ public class QRCodeReaderViewController: UIViewController {
         
         setupUIComponentsWithCancelButtonTitle(builder.cancelButtonTitle)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange), name: UIDevice.orientationDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     
     required public init?(coder aDecoder: NSCoder) {
